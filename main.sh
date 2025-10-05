@@ -24,7 +24,7 @@ main() {
   check_requirements
   setup_interactive_config
   confirm_installation
-  perform_installation
+  configure_system
 }
 
 check_requirements() {
@@ -40,13 +40,10 @@ confirm_installation() {
   echo "Installation Summary:"
   echo "  Hostname: $HOSTNAME"
   echo "  Username: $USERNAME"
+  echo "  User Password: $USER_PASSWORD"
+  echo "  root Password: $ROOT_PASSWORD"
 
-  echo "This will DESTROY ALL DATA on $DISK"
-  confirm "Continue with installation?"
-}
-
-perform_installation() {
-  configure_system
+  confirm "Continue with configuration?"
 }
 
 # Run main function
